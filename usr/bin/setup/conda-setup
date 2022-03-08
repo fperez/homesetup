@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# First, run conda-install, and then start a new shell
+# where to run this script so that conda is properly initialized
+
+mamba update --all --yes
+
+mamba install --yes \
+        ipython jupyter jupyterlab jupyter-book jupyter-repo2docker \
+        retrolab jupyterlab-git jupyterlab-system-monitor \
+        jupyterlab-variableinspector jupyterlab-drawio nbdime \
+        ipywidgets ipympl ipycanvas ipydatagrid \
+        numpy scipy matplotlib sympy scikit-image scikit-learn networkx \
+        pandas seaborn statsmodels xarray xlrd \
+        geopandas h5py netcdf4 pytables jupyterlab-geojson \
+        zarr intake intake-xarray intake-esm pydap rasterio \
+        altair bokeh jupyter_bokeh plotly bqplot \
+        cython numba fortran-magic \
+        dask dask-labextension distributed ipyparallel \
+        black jedi pep8 flake8 pyflakes pylint pytest pytest-cov \
+        sphinx numpydoc pandoc jupytext \
+        yaml lxml requests \
+        nodejs \
+        pip
+
+# Set up pip to run on top of conda by creating a "conda pip overlay" at
+# copip/ subdir of the environment where this is being run, and installing any
+# pip-managed packages there.
+
+# Create dir for pip-installed packages
+mkdir -p $CONDA_PREFIX/copip
+export PYTHONUSERBASE=$CONDA_PREFIX/copip
+export PIP_USER=True
+
+# JupyterLab extensions (not all available on Conda yet)
+#pip install jupyterlab-spreadsheet-editor
+
+# Conda will try to pull in all of Julia itself, so pyjulia is best pulled
+# via pip
+pip install julia

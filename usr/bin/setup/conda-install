@@ -1,0 +1,16 @@
+
+#!/bin/bash
+# Download and install miniconda
+
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+bash ~/miniconda.sh -b -p $HOME/local/conda
+
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
+conda install --yes mamba
+
+# Mambaforge version - doesn't work yet correctly, doesn't seem to recognize
+# the -b -p options...
+#wget https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-MacOSX-x86_64.sh -O ~/minimamba.sh
+#bash ~/minimamba.sh -b -p $HOME/local/conda

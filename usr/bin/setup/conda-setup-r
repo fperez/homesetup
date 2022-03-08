@@ -1,0 +1,10 @@
+#!/bin/bash
+
+conda install --yes rpy2 r-ggplot2 r-dplyr r-repr r-evaluate r-crayon \
+      r-devtools r-uuid r-digest r-irdisplay
+
+hash -r 
+
+R -e "install.packages(c('pbdZMQ'), repos='http://cran.us.r-project.org')"
+R -e "devtools::install_github('IRkernel/IRkernel')"
+R -e "IRkernel::installspec()"

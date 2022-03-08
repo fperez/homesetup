@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Run this with Sudo!
+
+# Create wavelet(20665) user group
+dscl . -create /Groups/wavelet
+dscl . -create /Groups/wavelet RealName "wavelet"
+dscl . -create /Groups/wavelet PrimaryGroupID 20665
+
+
+# Create fperez(33212) user id with admin privileges
+dscl . -create /Users/fperez
+dscl . -create /Users/fperez NFSHomeDirectory /Users/fperez
+dscl . -create /Users/fperez RealName "Fernando Perez"
+dscl . -create /Users/fperez UserShell /bin/bash
+dscl . -create /Users/fperez UniqueID 33212
+dscl . -create /Users/fperez PrimaryGroupID 20665
+dscl . -append /Groups/admin GroupMembership fperez
+dscl . -append /Groups/staff GroupMembership fperez

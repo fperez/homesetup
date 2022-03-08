@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+# Install all extensions in one shot to avoid multiple rebuilds
+jupyter labextension install @jupyter-widgets/jupyterlab-manager \
+	@jupyterlab/geojson-extension jupyter-matplotlib ipycanvas
+
+
+# Removed: @jupyterlab/fasta-extension @jupyterlab/plotly-extension

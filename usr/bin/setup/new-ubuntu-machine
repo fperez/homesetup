@@ -1,0 +1,48 @@
+#!/bin/bash
+# Configure a new ubuntu machine
+# Current package list is for 14.10, 64-bit
+
+# Set up fperez user
+groupadd -g 20665 wavelet
+
+useradd -u 33212 -g wavelet -G adm,cdrom,sudo,dip,plugdev,lpadmin,sambashare \
+ -N -s /bin/bash fperez
+
+mkdir /home/fperez
+chown fperez:wavelet /home/fperez
+
+# Install packages. 
+# NOTE: MUST enable partner repos in synaptic first
+apt-get install ipython ipython-notebook ipython-qtconsole \
+  python-scipy python-matplotlib mayavi2 python-pandas \
+  python-mpltoolkits.basemap* python-rpy2 \
+  python-sympy cython python-networkx python-pexpect python-nose \
+  python-setuptools python-sphinx python-pygments python-tk \
+  python-sklearn* python-skimage* python-scikits.statsmodels \
+  python-pip python-opencv python-doc python-jsonschema \
+  build-essential gfortran \
+  ipython3-qtconsole ipython3-notebook python3-scipy python3-skimage \
+  lyx inkscape curl gnuplot mplayer pydf htop tilda \
+  gkrellm gkrellm-volume gkrellm-x86info \
+  pandoc latexdiff tmux mc gnome-do synaptic pithos rhythmbox \
+  gedit gedit-plugins git gitg gitk git-gui \
+  compiz-gnome compiz-plugins-main compiz-plugins-extra \
+  compizconfig-settings-manager gnome-tweak-tool sound-juicer \
+  qt5-default \
+  vlc gimp gimp-data gimp-plugin-registry gimp-data-extras \
+  flac faac faad sox ffmpeg2theora \
+  libmpeg2-4 uudeview mpeg3-utils mpegdemux liba52-dev \
+  mpeg2dec vorbis-tools id3v2 mpg321 mpg123 lame \
+  krita gthumb nmap pan cheese libreoffice xournal \
+  emacs emacs-goodies-el jed-extra shutter workrave
+
+# Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
+
+# Get build dependencies for common python things
+apt-get build-dep python-defaults python-scipy matplotlib mayavi2 cython
+
+# Laptop-specific
+apt-get install awesome-extra
