@@ -9,10 +9,10 @@ alias bc='brew install --cask'
 
 # Plain homebrew (cmd line) tools
 bi bash rsync wget
-bi tmux htop emacs micro mc
+bi iterm2 tmux htop emacs micro mc
 bi git hub
 bi imagemagick
-bi menumeters
+bi menumeters karabiner-elements
 
 # Cask (gui) installs
 bc firefox zoom obs slack
