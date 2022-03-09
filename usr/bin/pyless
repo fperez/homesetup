@@ -1,0 +1,4 @@
+#!/bin/sh
+# shell script to view a python source code file colorized and through less
+
+pygmentize -l python -f terminal256 -O style=monokai "$@" 2> /dev/null | less -R

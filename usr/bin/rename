@@ -1,0 +1,46 @@
+#!/usr/bin/perl
+# rename script. Example 9-5 in the Perl Cookbook
+#
+# modified (made interactive by default, for safety) by
+# Fernando Perez: fperez@pizero.colorado.edu
+# May 2001
+#############################################################################
+
+$usage="
+Usage: rename [-f] expr [files]
+  expr is any perl code
+  -f: forceful mode (doesn't ask anything)
+  -h: prints this help message
+  
+  Default mode is interactive (asks for each file).
+  Response should be y/n/a: yes/no/yes to this one and all the rest
+  
+";
+
+#############################################################################
+# cmd line options
+use Getopt::Std;
+getopts("fh");
+if ($opt_h) { die $usage }
+$interactive=1;
+if ($opt_f) { $interactive=0 }
+
+# begin actual code
+$op=shift or die $usage;
+chomp(@ARGV = <STDIN>) unless @ARGV;
+for (@ARGV) {
+    $was=$_;
+    eval $op;
+    die $@ if $@;
+    if ($interactive) {
+	if ($was eq $_) { next }
+	print "Rename $was to $_ ? (y/n/all/quit) ";
+	$ans=<STDIN>;
+	if ($ans =~ /^q/i) {exit;}
+	if ($ans =~ /^a/i) { $interactive=0 } # yes for this one and all the rest
+	unless ($ans =~ /^y|^a/i) { next }
+    }
+    unless ($was eq $_) { 
+	rename($was,$_) or die "Couldn't rename file <$was>!: $!\n\n";
+    }
+}
