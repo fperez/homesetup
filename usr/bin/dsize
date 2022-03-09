@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Script to summarize the sizes of files and subdirs in a given directory.
+# If no arguments are given, the current directory is used.
+
+# Modified after: http://www.newartisans.com/johnw/scripts/sizes
+
+
+dir=${1:-.}
+
+du -shx ${dir}/* ${dir}/.[a-zA-Z0-9_]* 2> /dev/null | \
+  egrep '^ *[0-9.]*[MG]' | sort -n > /tmp/sorted
+
+egrep '^ *[0-9.]*M' /tmp/sorted
+egrep '^ *[0-9.]*G' /tmp/sorted
+
+rm /tmp/sorted
+
+echo '-----------------------------------------------'
+echo 'Total (including smaller dirs not shown above):'
+du -shx $dir
