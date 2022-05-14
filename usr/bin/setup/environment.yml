@@ -1,0 +1,92 @@
+# My prefered base conda/mamba environment setup, with a good selection
+# of packages I am likely to use on a regular basis.
+
+name: base
+
+channels:
+  - conda-forge
+
+dependencies:
+  - altair
+  - beautifulsoup
+  - black
+  - bokeh
+  - bqplot
+  - cartopy
+  - coverage
+  - cython
+  - dask
+  - dask-labextension
+  - distributed
+  - flake8
+  - fortran-magic
+  - geopandas
+  - geos
+  - geotiff
+  - h5netcdf
+  - h5py
+  - hdf5
+  - hypothesis
+  - intake
+  - intake-esm
+  - intake-xarray
+  - ipycanvas
+  - ipydatagrid
+  - ipympl
+  - ipyparallel
+  - ipython
+  - ipywidgets
+  - jedi
+  - jupyter
+  - jupyter-book
+  - jupyter-repo2docker
+  - jupyterlab
+  - jupyterlab-drawio
+  - jupyterlab-favorites
+  - jupyterlab-git
+  - jupyterlab-system-monitor
+  - jupyterlab-variableinspector
+  - jupyterlab_pygments
+  - jupyterlab_widgets
+  - jupytext
+  - lxml
+  - markdown-it-py
+  - matplotlib
+  - matplotlib-inline
+  - mdit-py-plugins
+  - mock
+  - myst-nb
+  - myst-parser
+  - nbdime
+  - networkx
+  - nodejs
+  - numba
+  - numpy
+  - numpydoc
+  - pandas
+  - pep8
+  - pillow
+  - pip
+  - plotly
+  - pooch
+  - pydap
+  - pyflakes
+  - pylint
+  - pytest
+  - pytest-cov
+  - pytest-notebook
+  - rasterio
+  - requests
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - seaborn
+  - sphinx
+  - sphinx-jupyterbook-latex
+  - statsmodels
+  - sympy
+  - tqdm
+  - xarray
+  - xlrd
+  - yaml
+  - zarr
