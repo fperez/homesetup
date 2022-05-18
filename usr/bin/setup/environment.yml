@@ -8,7 +8,6 @@ channels:
 
 dependencies:
   - altair
-  - beautifulsoup
   - black
   - bokeh
   - bqplot
