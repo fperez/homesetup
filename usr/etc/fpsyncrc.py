@@ -67,6 +67,7 @@ home['to_update'] = """
                     .jed .less .lesskey .lyx
                     .pycheckrc .pypirc .pythonstartup.py .Rprofile
                     .sig .ssh .tmux.conf 
+                    .dotfiles .homesetup
                     Desktop Documents 
                     """.split()
 

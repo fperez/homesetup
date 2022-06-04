@@ -28,6 +28,8 @@ dependencies:
   - hypothesis
   - intake
   - intake-esm
+  - intake-geopandas
+  - intake-stac
   - intake-xarray
   - ipycanvas
   - ipydatagrid
@@ -42,6 +44,7 @@ dependencies:
   - jupyterlab
   - jupyterlab-drawio
   - jupyterlab-favorites
+  - jupyterlab-geojson
   - jupyterlab-git
   - jupyterlab-system-monitor
   - jupyterlab-variableinspector
