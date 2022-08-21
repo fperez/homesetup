@@ -15,11 +15,14 @@ bi imagemagick
 bi menumeters karabiner-elements
 
 # Cask (gui) installs
-bc firefox zoom obs slack
+bc firefox google-chrome zoom obs slack
 bc visual-studio-code
-bc google-backup-and-sync dropbox
+bc google-drive dropbox
+bc syncthing
+bc google-earth-pro qgis
 bc lyx mactex 
 bc vlc spotify
 bc spectacle monitorcontrol flux fluor
-bc keepassx
+bc keepassx todoist
 bc meld
+bc whatsapp
