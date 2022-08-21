@@ -11,6 +11,8 @@ dependencies:
   - black
   - bokeh
   - bqplot
+  - bs4
+  - build
   - cartopy
   - coverage
   - cython
@@ -33,6 +35,7 @@ dependencies:
   - intake-xarray
   - ipycanvas
   - ipydatagrid
+  - ipyleaflet
   - ipympl
   - ipyparallel
   - ipython
@@ -46,6 +49,9 @@ dependencies:
   - jupyterlab-favorites
   - jupyterlab-geojson
   - jupyterlab-git
+  - jupyterlab-lsp
+  - jupyterlab-mathjax3
+  - jupyterlab-myst
   - jupyterlab-system-monitor
   - jupyterlab-variableinspector
   - jupyterlab_pygments
@@ -71,12 +77,14 @@ dependencies:
   - pip
   - plotly
   - pooch
+  - pyarrow
   - pydap
   - pyflakes
   - pylint
   - pytest
   - pytest-cov
   - pytest-notebook
+  - python-lsp-server
   - rasterio
   - requests
   - scikit-image
@@ -88,6 +96,7 @@ dependencies:
   - statsmodels
   - sympy
   - tqdm
+  - twine
   - xarray
   - xlrd
   - yaml
