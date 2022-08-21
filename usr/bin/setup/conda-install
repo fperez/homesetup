@@ -2,7 +2,8 @@
 # Download, install and configure a basic miniconda setup
 
 # Fetch latest MacOS version - adjust for a different OS
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda.sh
 
 # I prefer to keep my conda installs under ~/local/conda
 # Note that this will fail if that directory already exists,
