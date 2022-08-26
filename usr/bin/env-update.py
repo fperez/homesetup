@@ -40,7 +40,7 @@ from ruyaml import YAML
 def parse_dep(dep):
     """Parse a dependency into (package, version) tuple.
 
-    If the given dependency can't be parsed, returns (None, None).
+    If the given dependency can't be parsed, returns None.
     """
     if not isinstance(dep, str):
         return None
