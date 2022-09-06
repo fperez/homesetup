@@ -47,6 +47,12 @@ or if you didn't add the `ghome` alias as above, using the long form:
 git --git-dir=$HOME/.homesetup --work-tree=$HOME switch main
 ```
 
+If you get a warning about files that might be overwritten, check first whether you're OK with that. If not, move the conflicting files out of the way first, otherwise you can force the switch with
+
+```bash
+ghome switch -f main
+```
+
 > :warning: The command `ghome status` will show all the untracked files, which in your home directory is likely a lot. To disable this behavior, use:
 >
 > ```bash 
@@ -55,3 +61,14 @@ git --git-dir=$HOME/.homesetup --work-tree=$HOME switch main
 > ```
 
 That's it, enjoy git-managed `$HOME` scaffolding!
+
+## Summary boostrap
+
+The following has all the steps above in a single block for convenient copy/paste when setting up a new machine:
+
+```bash
+git clone --bare https://github.com/fperez/homesetup.git $HOME/.homesetup
+alias ghome='git --git-dir=$HOME/.homesetup --work-tree=$HOME'
+ghome switch -f main
+ghome config --local status.showUntrackedFiles no
+```
