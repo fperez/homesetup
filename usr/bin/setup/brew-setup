@@ -17,12 +17,9 @@ bi menumeters karabiner-elements
 # Cask (gui) installs
 bc firefox google-chrome zoom obs slack
 bc visual-studio-code
-bc google-drive dropbox
-bc syncthing
+bc google-drive dropbox syncthing
 bc google-earth-pro qgis
 bc lyx mactex 
 bc vlc spotify
 bc spectacle monitorcontrol flux fluor
-bc keepassx todoist
-bc meld
-bc whatsapp
+bc keepassx todoist free-ruler meld whatsapp
