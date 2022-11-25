@@ -44,6 +44,9 @@ def parse_dep(dep):
     """
     if not isinstance(dep, str):
         return None
+    
+    if "=" not in dep:
+        return dep, None
 
     match = re.match(r'([a-zA-Z0-9_-]+)==?([0-9.]+)', dep)
     if match:
@@ -65,13 +68,15 @@ def test_parse_deps():
             'aiohttp=3.8.1=py39hb18efdd_1',
             'aiosignal=1.2.0=pyhd8ed1ab_0',
             'alabaster=0.7.12=py_0',
-            'foo=BADVER-nostring']
+            'foo=BADVER-nostring',
+            'foo']
 
     parsed = [('abseil-cpp', '20211102.0'),
               ('affine', '2.3.1'),
               ('aiohttp', '3.8.1'),
               ('aiosignal', '1.2.0'),
-              ('alabaster', '0.7.12')]
+              ('alabaster', '0.7.12'),
+              ('foo', None)]
 
     assert parsed == parse_deps(deps)
 
@@ -99,12 +104,10 @@ def main():
     # for things we can parse
     newenv_deps = dict(parse_deps(newenv['dependencies']))
 
-    # Now, create a new dependencies section to replace the old one
-    new_deps = []
-
     # The logic is: go through the originals one by one, and only update
-    # deps for which we found one in the real environment from conda
-    for ori_dep in env['dependencies']:
+    # deps for which we found one in the real environment from conda.
+    # Note: we have to do it in-place in order to preserve the comments.
+    for i, ori_dep in enumerate(env['dependencies']):
         ori_parsed = parse_dep(ori_dep)
         if ori_parsed is None:
             # If we can't parse the definition as pkg/version, keep
@@ -120,13 +123,17 @@ def main():
             else:
                 # Only if we have a proper replacement, use it
                 new_dep = f'{pkg}=={new_ver}'
-        new_deps.append(new_dep)
+        # Write back the computed dependency into this slot. We can write the 
+        # string entry, ruyaml will take care of keeping the comments/order/etc
+        # of the whole section
+        env['dependencies'][i] = new_dep
 
-    # Now, we can replace the deps section with ours
-    env['dependencies'] = new_deps
+    # Conda envs are typically 2-offset indented, so let's preserve that
+    yaml.indent(offset=2)
 
     # Write output to disk, either to a separate file for easy comparison
     # by the user or in-place if requested
+    
     if args.inplace:
         print(f'Overwriting {args.filename} in-place.')
         with tempfile.NamedTemporaryFile('w') as f:
