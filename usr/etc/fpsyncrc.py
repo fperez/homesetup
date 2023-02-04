@@ -59,7 +59,7 @@ h = dict(dir1 = '~',
 
 home = h.copy()
 home['to_update'] = """
-                    .bash_profile .bashrc .bash_utils .profile
+                    .bash_profile .bashrc .bash_utils .bash_secrets .profile
                     .bash-git-completion .bash-git-prompt
                     .emacs .emacs.conf.d .fonts
                     .gitconfig .gitconfig.local .gitignore .gitk 
