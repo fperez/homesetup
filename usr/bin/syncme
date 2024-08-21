@@ -26,9 +26,9 @@ import subprocess
 #***************************************************************************
 
 # Default values, all can be overridden with cmd line flags
-#HOST = 'longs'
+HOST = 'longs'
+#HOST = 'blanca.local'
 #HOST = 'ritacuba'
-HOST = 'blanca.local'
 
 # The dot in START_DIR is there to give properly assembled paths starting at
 # $HOME if / is added

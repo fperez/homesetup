@@ -43,16 +43,17 @@ dependencies:
   - jedi
   - jupyter
   - jupyter-book
+  - jupyter-collaboration
   - jupyter-repo2docker
   - jupyterlab
-  - jupyterlab-drawio
+ # - jupyterlab-drawio  ## XXX - forces downgrade to jlab 3
   - jupyterlab-favorites
   - jupyterlab-geojson
   - jupyterlab-git
   - jupyterlab-lsp
   - jupyterlab-mathjax3
   - jupyterlab-myst
-  - jupyterlab-system-monitor
+#  - jupyterlab-system-monitor ## XXX - forces downgrade to jlab 3
   - jupyterlab-variableinspector
   - jupyterlab_pygments
   - jupyterlab_widgets
@@ -68,7 +69,7 @@ dependencies:
   - nbdime
   - networkx
   - nodejs
-  - numba
+  #- numba  # not compatible with numpy 2.1 (as packaged in conda-forge)
   - numpy
   - numpydoc
   - pandas

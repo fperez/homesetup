@@ -1,25 +1,38 @@
 #!/bin/bash
 
-# Unless this option is given, aliases aren't expanded
-# inside shell scripts
+# Define the list of packages to be installed
+packages="bash rsync wget
+iterm2 tmux htop emacs micro midnight-commander
+git hub 
+imagemagick
+menumeters karabiner-elements
+firefox google-chrome zoom obs slack
+visual-studio-code obsidian
+google-drive dropbox syncthing
+google-earth-pro qgis
+lyx mactex 
+vlc spotify
+rectangle monitorcontrol flux fluor
+keepassx todoist free-ruler meld whatsapp
+"
 
-shopt -s expand_aliases
-alias bi="brew install"
-alias bc='brew install --cask' 
+# Install Homebrew if not already installed
+if ! command -v brew &> /dev/null; then
+    echo "Installing Homebrew..."
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
-# Plain homebrew (cmd line) tools
-bi bash rsync wget
-bi iterm2 tmux htop emacs micro mc
-bi git hub
-bi imagemagick
-bi menumeters karabiner-elements
+installed=`brew list -1`
 
-# Cask (gui) installs
-bc firefox google-chrome zoom obs slack
-bc visual-studio-code
-bc google-drive dropbox syncthing
-bc google-earth-pro qgis
-bc lyx mactex 
-bc vlc spotify
-bc spectacle monitorcontrol flux fluor
-bc keepassx todoist free-ruler meld whatsapp
+# Iterate over each package in the list and install it
+for pkg in $packages; do
+    # Check if the package is already installed
+    if echo "$installed" | grep -q "^$pkg\$"; then
+        echo "$pkg is already installed"
+    else
+        echo "Installing $pkg..."
+        brew install $pkg
+    fi
+done
+
+echo "All packages installed successfully"

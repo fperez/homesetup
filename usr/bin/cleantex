@@ -4,4 +4,5 @@ file=$1
 /bin/rm -f ${file}.dvi ${file}.log ${file}.aux ${file}.ps ${file}.idx
 /bin/rm -f ${file}.*~ ${file}.lof ${file}.toc  ${file}.lot ${file}.nav
 /bin/rm -f ${file}.snm ${file}.out ${file}.bbl ${file}.blg ${file}.vrb
+/bin/rm -f ${file}.bcf ${file}.run.xml ${file}.suppinfo
 /bin/rm -rf ${file}_files

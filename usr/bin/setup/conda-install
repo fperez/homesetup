@@ -2,18 +2,27 @@
 # Download, install and configure a basic miniconda setup
 
 # Fetch latest MacOS version - adjust for a different OS
+
+# x86 (Intel macs)
 #wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O ~/miniconda.sh
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda.sh
+
+# arm64 (Apple Silicon macs)
+#wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh -O ~/miniconda.sh
+
+
+# Mambaforge instead
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
 
 # I prefer to keep my conda installs under ~/local/conda
 # Note that this will fail if that directory already exists,
 # as a safety to avoid clobbering an existing installation.
-bash ~/miniconda.sh -b -p $HOME/local/conda
+#bash ~/miniconda.sh -b -p $HOME/local/conda
+bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/local/conda
 
 # Post install update and configuration
-conda update -n base -c defaults -y conda
-conda config --add channels conda-forge
-conda config --set channel_priority strict
+# conda update -n base -c defaults -y conda
+# conda config --add channels conda-forge
+# conda config --set channel_priority strict
 
-# Install mamba for faster package management
-conda install --yes mamba
+# # Install mamba for faster package management
+# conda install --yes mamba
