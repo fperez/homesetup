@@ -13,7 +13,6 @@ dependencies:
   - bokeh
   - bqplot
   - bs4
-  - build
   - cartopy
   - coverage
   - cython
