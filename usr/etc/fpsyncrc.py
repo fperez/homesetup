@@ -1,15 +1,19 @@
 """
-Configuration file for the laptop-update.py script.  This file should be named
-either `~/.fpsyncrc.py` or `~/usr/etc/fpsyncrc.py` to be found by default.
-Otherwise its location must be given at runtime as the `--config` option.
+Configuration file for my sync tool - see https://github.com/fperez/fpsync for
+details.
 
-This file will be `exec`'d by the calling script in a namespace that has the following variables defined by default:
+This file should be named either `~/.fpsyncrc.py` or `~/usr/etc/fpsyncrc.py` to
+be found by default. Otherwise its location must be given at runtime as the
+`--config` option.
+
+This file will be `exec`'d by the calling script in a namespace that has the
+following variables defined by default:
 
 - host
 - start_dir
 - excludes
 
-These can be redefined here as desired to set up noew configurations.
+These can be redefined here as desired to set up new configurations.
 """
 
 from os.path import join as pjoin
