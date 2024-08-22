@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# OBSOLETE - this is extremely old code, not tested in ~10 years.
+#
+# NOTE: Script specific to my (fperez) usage.
+#
 # Configure a new ubuntu machine
 # Current package list is for 14.10, 64-bit
 

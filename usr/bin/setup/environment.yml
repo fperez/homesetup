@@ -5,6 +5,7 @@ name: base
 
 channels:
   - conda-forge
+  - nodefaults
 
 dependencies:
   - altair
@@ -46,14 +47,12 @@ dependencies:
   - jupyter-collaboration
   - jupyter-repo2docker
   - jupyterlab
- # - jupyterlab-drawio  ## XXX - forces downgrade to jlab 3
   - jupyterlab-favorites
   - jupyterlab-geojson
   - jupyterlab-git
   - jupyterlab-lsp
   - jupyterlab-mathjax3
   - jupyterlab-myst
-#  - jupyterlab-system-monitor ## XXX - forces downgrade to jlab 3
   - jupyterlab-variableinspector
   - jupyterlab_pygments
   - jupyterlab_widgets

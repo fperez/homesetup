@@ -8,3 +8,8 @@ wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambafor
 # as a safety to avoid clobbering an existing installation.
 
 bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/local/conda
+
+echo "**************************************************************"
+echo
+echo "Now, start a new shell/terminal, and run the "mamba-setup" script."
+echo

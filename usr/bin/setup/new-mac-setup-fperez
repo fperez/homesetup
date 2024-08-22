@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# NOTE: Script specific to my (fperez) usage.
+
+# Configure a new mac with my user/group id data consistent with
+# all prior machines for ease of synchronization.
+
 # Run this with Sudo!
 
 # Create wavelet(20665) user group

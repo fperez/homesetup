@@ -1,16 +1,17 @@
 #!/bin/bash
 
-# First, run conda-install, and then start a new shell
+# First, run mamba-install, and then start a new shell
 # where to run this script so that conda is properly initialized
 
 mamba update --all --yes
 mamba env update -f environment.yml
 
+# copip config below is disabled for now, it's a bit too obscure.
 # Set up pip to run on top of conda by creating a "conda pip overlay" at
 # copip/ subdir of the environment where this is being run, and installing any
 # pip-managed packages there.
 
 # Create dir for pip-installed packages
-mkdir -p $CONDA_PREFIX/copip
-export PYTHONUSERBASE=$CONDA_PREFIX/copip
-export PIP_USER=True
+# mkdir -p $CONDA_PREFIX/copip
+# export PYTHONUSERBASE=$CONDA_PREFIX/copip
+# export PIP_USER=True
