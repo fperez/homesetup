@@ -1,19 +1,23 @@
 #!/bin/bash
+#
+# Install homebrew and all my regularly used packages for macOS.
+# Can be run repeatedly as it checks for prior installations first.
+
 
 # Define the list of packages to be installed
-packages="bash rsync wget
-iterm2 tmux htop emacs micro midnight-commander
-git hub 
-imagemagick
-menumeters karabiner-elements
-firefox google-chrome zoom obs slack
-visual-studio-code obsidian
+packages="
+bash rsync wget tmux htop midnight-commander
+emacs micro jed git hub imagemagick
+mactex lyx
+iterm2
+firefox google-chrome whatsapp zoom  
+obs slack vlc spotify
+visual-studio-code obsidian meld
 google-drive dropbox syncthing
+rectangle alt-tab monitorcontrol
+menumeters karabiner-elements
+keepassx free-ruler 
 google-earth-pro qgis
-lyx mactex 
-vlc spotify
-rectangle monitorcontrol flux fluor
-keepassx todoist free-ruler meld whatsapp
 "
 
 # Install Homebrew if not already installed
