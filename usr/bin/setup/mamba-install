@@ -1,13 +1,13 @@
 #!/bin/bash
 # Download, install and configure a basic mambaforge setup
 
-wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh"
+wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 
 # I prefer to keep my conda installs under ~/local/conda
 # Note that this will fail if that directory already exists,
 # as a safety to avoid clobbering an existing installation.
 
-bash Mambaforge-$(uname)-$(uname -m).sh -b -p $HOME/local/conda
+bash Miniforge3-$(uname)-$(uname -m).sh -b -p $HOME/local/conda
 
 echo "**************************************************************"
 echo
