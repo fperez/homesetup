@@ -2,6 +2,9 @@
 
 This repository aims to make it very easy to setup a home directory on a new system according to my preferences.  It uses the same pattern of working off a bare git repo as my [related dotfiles repo](https://github.com/fperez/dotfiles). As such, it does _not_ contain any top-level non-hidden files like README.md or LICENSE to ensure that it can be cloned as a bare repo in your home directory to track all your desired config, without cluttering your home directory with extraneous files.
 
+A detailed explanation of the technique used here can be found in tihs [Atlassian blog post](https://www.atlassian.com/git/tutorials/dotfiles).
+
+
 ## Start using this repo
 
 First, **fork this repository to your personal github account**.
