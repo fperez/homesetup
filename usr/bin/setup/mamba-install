@@ -1,6 +1,10 @@
 #!/bin/bash
 # Download, install and configure a basic mambaforge setup
 
+# First, remove any old installers that may be lying around
+rm -f Miniforge3-$(uname)-$(uname -m).sh
+
+# Then download a fresh one
 wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 
 # I prefer to keep my conda installs under ~/local/conda

@@ -3,6 +3,10 @@
 # First, run mamba-install, and then start a new shell
 # where to run this script so that conda is properly initialized
 
+# Optional - pin a specific version of Python by updating that alone
+#mamba update --yes python=3.13
+
+# Now update all packages and install my normal environment
 mamba update --all --yes
 mamba env update -f environment.yml
 

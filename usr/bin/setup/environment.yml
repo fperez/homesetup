@@ -56,7 +56,7 @@ dependencies:
   - jupyterlab-variableinspector
   - jupyterlab_pygments
   - jupyterlab_widgets
-  - jupytext
+  #- jupytext
   - lxml
   - markdown-it-py
   - matplotlib
@@ -68,7 +68,7 @@ dependencies:
   - nbdime
   - networkx
   - nodejs
-  #- numba  # not compatible with numpy 2.1 (as packaged in conda-forge)
+  - numba
   - numpy
   - numpydoc
   - pandas
