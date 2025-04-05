@@ -9,6 +9,9 @@ __pycache__
 
 ref/calibre
 
+# MyST build dirs, should be rebuilt locally, change a lot
+_build
+
 # Location where I install machine-dependent stuff that I don't want
 # synchronized across computers.
 usr/opt

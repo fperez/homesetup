@@ -82,8 +82,8 @@ if p.platform().startswith('Linux'):
 # tmp - dbg
 #home['to_update'] = ['teach']
 
-dirs = """dev ipython jupyter misc prof ref research scratch
-          talks teach texmf usr www
+dirs = """dev jupyter misc prof ref research scratch
+          talks teach texmf usr writing www
           """.split()
 
 hdirs = []
