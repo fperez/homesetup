@@ -53,9 +53,7 @@ dict(dir1 = '~',
  must NEVER end in '/'.
 """
 
-# Main home directory sync, broken up  into several blocks, as I'm getting weird
-# failures that could be caused by the main one having become too large
-
+# Template for any file/dir to be synced off $HOME
 h = dict(dir1 = '~',
          dir2 = server_home,
          exclude_from = excludes,
@@ -63,34 +61,38 @@ h = dict(dir1 = '~',
 
 home = h.copy()
 home['to_update'] = """
-                    .bash_profile .bashrc .bash_utils .bash_secrets .profile
-                    .git-completion.bash .git-prompt.sh
-                    .emacs .emacs.conf.d .fonts .GarminDb
-                    .gitconfig .gitconfig.local .gitignore .gitk 
-                    .ipython .inputrc .ispell_english .ispell_spanish
-                    .jed .less .lesskey .lyx
-                    .pycheckrc .pypirc .pythonstartup.py .Rprofile
-                    .sig .ssh .tmux.conf 
-                    .dotfiles .homesetup
-                    Desktop Documents 
-                    """.split()
+    .bash_profile .bashrc .bash_utils .bash_secrets .profile
+    .git-completion.bash .git-prompt.sh
+    .emacs .emacs.conf.d .fonts .GarminDb
+    .gitconfig .gitconfig.local .gitignore .gitk 
+    .ipython .inputrc .ispell_english .ispell_spanish
+    .jed .less .lesskey .lyx
+    .pycheckrc .pypirc .pythonstartup.py .Rprofile
+    .sig .ssh .tmux.conf 
+    .dotfiles .homesetup
+    Desktop Documents 
+    dev jupyter misc prof ref research scratch
+    talks teach texmf usr writing www
+    """.split()
 
+# Linux-only updates
 import platform as p
 if p.platform().startswith('Linux'):
     home['to_update'].append('R')
 
-# tmp - dbg
-#home['to_update'] = ['teach']
+# Other folders off $HOME, broken up  into several blocks, as I'm getting weird
+# failures that could be caused by the main one having become too large
+# dirs = """dev jupyter misc prof ref research scratch
+#           talks teach texmf usr writing www
+#           """.split()
 
-dirs = """dev jupyter misc prof ref research scratch
-          talks teach texmf usr writing www
-          """.split()
+# hdirs = []
+# for d in dirs:
+#     hd = h.copy()
+#     hd['to_update'] = [d]
+#     hdirs.append(hd)
 
-hdirs = []
-for d in dirs:
-    hd = h.copy()
-    hd['to_update'] = [d]
-    hdirs.append(hd)
+hdirs = [] # Extra home dirs already in `home`, old bug seems gone.
 
 # .config directory
 config = dict(dir1 = pjoin('~', '.config'),
