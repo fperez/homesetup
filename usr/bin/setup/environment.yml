@@ -63,6 +63,7 @@ dependencies:
   - matplotlib-inline
   - mdit-py-plugins
   - mock
+  - mystmd
   - myst-nb
   - myst-parser
   - nbdime
