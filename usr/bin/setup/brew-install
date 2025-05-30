@@ -7,12 +7,13 @@
 # Define the list of packages to be installed
 packages="
 bash rsync wget tmux htop midnight-commander
-emacs micro jed git hub imagemagick
+emacs micro jed git hub imagemagick diffr
 mactex lyx
 iterm2
-firefox google-chrome whatsapp zoom  
+firefox google-chrome arc whatsapp signal zoom
 obs slack vlc spotify
-visual-studio-code obsidian meld
+visual-studio-code obsidian meld notion
+zulip discord 1password nordpass
 google-drive dropbox syncthing
 rectangle alt-tab monitorcontrol
 menumeters karabiner-elements
