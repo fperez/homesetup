@@ -25,6 +25,16 @@ google-earth-pro qgis
 if ! command -v brew &> /dev/null; then
     echo "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo "**********************************"
+    echo 
+    echo "Homebrew just got installed fresh."
+    echo "You need to follow the instructions on the screen above" 
+    echo "to set up your shell."
+    echo "Then, open a new terminal, check that the command"
+    echo "brew -v"
+    echo "gives you output, and then run this script a second time so it"
+    echo "can finish installing all needed packages."
+    exit 
 fi
 
 installed=`brew list -1`
