@@ -9,15 +9,3 @@
 # Now update all packages and install my normal environment
 mamba update --all --yes
 mamba env update -f environment.yml
-
-# DISABLED:
-
-# copip config below is disabled for now, it's a bit too obscure.
-# Set up pip to run on top of conda by creating a "conda pip overlay" at
-# copip/ subdir of the environment where this is being run, and installing any
-# pip-managed packages there.
-
-# Create dir for pip-installed packages
-# mkdir -p $CONDA_PREFIX/copip
-# export PYTHONUSERBASE=$CONDA_PREFIX/copip
-# export PIP_USER=True
