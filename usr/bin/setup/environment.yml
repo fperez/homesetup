@@ -42,14 +42,14 @@ dependencies:
   - ipywidgets
   - jedi
   - jupyter
-  - jupyter-ai
+#  - jupyter-ai
   - jupyter-book
   - jupyter-collaboration
   - jupyter-repo2docker
   - jupyterlab
   - jupyterlab-favorites
   - jupyterlab-geojson
-  - jupyterlab-git
+#  - jupyterlab-git
   - jupyterlab-lsp
   - jupyterlab-mathjax3
   - jupyterlab-myst
