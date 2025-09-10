@@ -9,7 +9,7 @@ packages="
 bash rsync wget tmux htop midnight-commander
 emacs micro jed git hub imagemagick diffr
 mactex lyx
-iterm2 micromamba
+iterm2
 firefox google-chrome arc whatsapp signal zoom
 obs slack vlc spotify
 visual-studio-code obsidian meld notion

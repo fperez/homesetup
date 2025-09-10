@@ -7,5 +7,5 @@
 #mamba update --yes python=3.13
 
 # Now update all packages and install my normal environment
-mamba update --all --yes
-mamba env update -f environment.yml
+#mamba env update -y -f env-mini.yml  # dbg
+mamba env update -y -f environment.yml

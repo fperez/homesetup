@@ -2,18 +2,19 @@
 # Download, install and configure a basic mambaforge setup
 
 # First, remove any old installers that may be lying around
-rm -f Miniforge3-$(uname)-$(uname -m).sh
+#rm -f Miniforge3-$(uname)-$(uname -m).sh
 
 # Then download a fresh one
-wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+#wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 
-# I prefer to keep my conda installs under ~/local/conda
-# Note that this will fail if that directory already exists,
-# as a safety to avoid clobbering an existing installation.
+# This installs micromamba to ~/.local/bin by default
+curl -L micro.mamba.pm/install.sh | INIT_YES=no CONDA_FORGE_YES=no bash
 
-bash Miniforge3-$(uname)-$(uname -m).sh -b -p $HOME/local/conda
+# Make a symlink there as mamba as I have lots of scripts that call
+# "mamba" and don't want to rework them to "micromamba"
+cd $HOME/.local/bin && ln -s ./micromamba ./mamba
 
 echo "**************************************************************"
 echo
-echo "Now, start a new shell/terminal, and run the "mamba-setup" script."
+echo "Now run the "mamba-setup" script."
 echo
