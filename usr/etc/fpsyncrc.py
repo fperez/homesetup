@@ -71,8 +71,6 @@ home['to_update'] = """
     .sig .ssh .tmux.conf 
     .dotfiles .homesetup
     Desktop Documents 
-    dev jupyter misc prof ref research scratch
-    talks teach texmf usr writing www
     """.split()
 
 # Linux-only updates
@@ -82,17 +80,17 @@ if p.platform().startswith('Linux'):
 
 # Other folders off $HOME, broken up  into several blocks, as I'm getting weird
 # failures that could be caused by the main one having become too large
-# dirs = """dev jupyter misc prof ref research scratch
-#           talks teach texmf usr writing www
-#           """.split()
+dirs = """dev jupyter misc prof ref research scratch
+          talks teach texmf usr writing www
+          """.split()
 
-# hdirs = []
-# for d in dirs:
-#     hd = h.copy()
-#     hd['to_update'] = [d]
-#     hdirs.append(hd)
+hdirs = []
+for d in dirs:
+    hd = h.copy()
+    hd['to_update'] = [d]
+    hdirs.append(hd)
 
-hdirs = [] # Extra home dirs already in `home`, old bug seems gone.
+#hdirs = [] # Extra home dirs already in `home`, old bug seems gone.
 
 # .config directory
 config = dict(dir1 = pjoin('~', '.config'),

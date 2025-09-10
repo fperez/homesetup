@@ -7,15 +7,18 @@
 .hypothesis
 __pycache__
 
-ref/calibre
+# Used by uv and pixi, can contain huge package caches
+.venv
+.pixi
 
 # MyST build dirs, should be rebuilt locally, change a lot
 _build
 
+ref/calibre
+
 # Location where I install machine-dependent stuff that I don't want
 # synchronized across computers.
 usr/opt
-
 
 # Skip VSCode's user cache
 User/workspaceStorage
