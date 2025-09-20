@@ -11,6 +11,9 @@ __pycache__
 .venv
 .pixi
 
+# giant terraform caches that can be rebuilt locally
+.terraform
+
 # MyST build dirs, should be rebuilt locally, change a lot
 _build
 
