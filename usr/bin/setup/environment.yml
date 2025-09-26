@@ -38,6 +38,7 @@ dependencies:
   - ipyleaflet
   - ipympl
   - ipyparallel
+  - ipytest
   - ipython
   - ipywidgets
   - jedi
@@ -62,6 +63,7 @@ dependencies:
   - matplotlib
   - matplotlib-inline
   - mdit-py-plugins
+  - meson
   - mock
   - mystmd
   - myst-nb
